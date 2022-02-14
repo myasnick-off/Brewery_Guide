@@ -1,6 +1,8 @@
 package com.example.breweryguide.ui.list
 
+import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +14,7 @@ import com.example.breweryguide.domain.model.BreweryBasic
 import com.example.breweryguide.ui.AppState
 import com.example.breweryguide.utils.hide
 import com.example.breweryguide.utils.show
+import com.example.breweryguide.utils.showErrorDialog
 
 class ListFragment: Fragment() {
 
@@ -64,7 +67,8 @@ class ListFragment: Fragment() {
             }
             is AppState.Error -> {
                 listProgressBar.hide()
-//                TODO()
+                showErrorDialog(requireContext()) { _, _ -> requestData() }
+                Log.e("mylog", "Error: ${appState.error.message}")
             }
             else -> listProgressBar.hide()
         }
