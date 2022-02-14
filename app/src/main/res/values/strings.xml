@@ -7,4 +7,15 @@
     <string name="loading_error">Loading error!</string>
     <string name="retry">Try again!</string>
     <string name="cancel">Cancel</string>
+    <string name="street">Street:</string>
+    <string name="address2">Address 2:</string>
+    <string name="address3">Address 3:</string>
+    <string name="city">City:</string>
+    <string name="state">State:</string>
+    <string name="province">Country province:</string>
+    <string name="post">Postal code:</string>
+    <string name="phone">Phone:</string>
+    <string name="site">Website:</string>
+    <string name="updated">Updated:</string>
+    <string name="created">Created:</string>
 </resources>

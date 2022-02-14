@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.breweryguide.databinding.FragmentListItemBinding
 import com.example.breweryguide.domain.model.BreweryBasic
 
-class ListRecyclerAdapter :
+class ListRecyclerAdapter(private val listener: ListFragment.ItemClickListener) :
     ListAdapter<BreweryBasic, ListRecyclerAdapter.BreweryViewHolder>(BreweryItemCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BreweryViewHolder {
@@ -28,6 +28,7 @@ class ListRecyclerAdapter :
             nameTextView.text = breweryBasic.name
             typeTextView.text = breweryBasic.breweryType
             countryTextView.text = breweryBasic.country
+            root.setOnClickListener { listener.onItemClicked(breweryBasic.id) }
         }
 
     }

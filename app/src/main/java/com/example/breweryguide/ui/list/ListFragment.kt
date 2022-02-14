@@ -1,6 +1,5 @@
 package com.example.breweryguide.ui.list
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,9 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.breweryguide.R
 import com.example.breweryguide.databinding.FragmentListBinding
 import com.example.breweryguide.domain.model.BreweryBasic
 import com.example.breweryguide.ui.AppState
+import com.example.breweryguide.ui.details.DetailsFragment
 import com.example.breweryguide.utils.hide
 import com.example.breweryguide.utils.show
 import com.example.breweryguide.utils.showErrorDialog
@@ -22,7 +23,9 @@ class ListFragment: Fragment() {
         ViewModelProvider(this).get(ListViewModel::class.java)
     }
     private val adapter by lazy {
-        ListRecyclerAdapter()
+        ListRecyclerAdapter( object : ItemClickListener {
+            override fun onItemClicked(breweryId: String) { runDetails(breweryId) }
+        })
     }
 
     private var _binding: FragmentListBinding? = null
@@ -60,22 +63,34 @@ class ListFragment: Fragment() {
 
     private fun renderData(appState: AppState) = with(binding) {
         when(appState) {
-            AppState.Loading -> listProgressBar.show()
+            AppState.Loading -> listProgressBar.root.show()
             is AppState.ListSuccess -> {
-                listProgressBar.hide()
+                listProgressBar.root.hide()
                 showList(appState.breweryList)
             }
             is AppState.Error -> {
-                listProgressBar.hide()
+                listProgressBar.root.hide()
                 showErrorDialog(requireContext()) { _, _ -> requestData() }
                 Log.e("mylog", "Error: ${appState.error.message}")
             }
-            else -> listProgressBar.hide()
+            else -> listProgressBar.root.hide()
         }
     }
 
     private fun showList(breweryList: List<BreweryBasic>) {
         adapter.submitList(breweryList)
+    }
+
+    private fun runDetails(breweryId: String) {
+        parentFragmentManager.beginTransaction()
+            .add(R.id.container, DetailsFragment.newInstance(breweryId))
+            .addToBackStack("")
+            .commit()
+    }
+
+    // интерфейс для обработки кликов на элементы списка
+    interface ItemClickListener {
+        fun onItemClicked(breweryId: String)
     }
 
     companion object {
