@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--    beer colors-->
+    <color name="color_brown_dark">#260e04</color>
+    <color name="color_brown_medium">#4e342e</color>
+    <color name="color_brown_light">#7b5e57</color>
+    <color name="color_yellow_dark">#c79100</color>
+    <color name="color_yellow_medium">#ffc107</color>
+    <color name="color_yellow_light">#fff350</color>
 </resources>

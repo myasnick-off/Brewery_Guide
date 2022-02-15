@@ -83,6 +83,12 @@ class ListFragment: Fragment() {
 
     private fun runDetails(breweryId: String) {
         parentFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                R.anim.slide_in_horizontal,
+                R.anim.slide_out_horizontal,
+                R.anim.slide_in_horizontal,
+                R.anim.slide_out_horizontal
+            )
             .add(R.id.container, DetailsFragment.newInstance(breweryId))
             .addToBackStack("")
             .commit()
