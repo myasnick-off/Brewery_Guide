@@ -1,10 +1,16 @@
 package com.example.breweryguide.ui.details
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -90,9 +96,26 @@ class DetailsFragment : Fragment() {
         postTextView.text = breweryDetails.postalCode
         countryTextView.text = breweryDetails.country
         phoneTextView.text = breweryDetails.phone
-        siteTextView.text = breweryDetails.websiteUrl
         createdTextView.text = breweryDetails.createdAt
         updatedTextView.text = breweryDetails.updatedAt
+        // делаем текст вебсайта кликабельным
+        makeClickable(siteTextView, breweryDetails.websiteUrl)
+    }
+
+    // функция для создания кликабельного текста
+    private fun makeClickable(textView: TextView, text: String) {
+        val clickableText = SpannableString(text)
+        val clickableSpan = object : ClickableSpan() {
+            override fun onClick(view: View) { openWebsite(text) }
+        }
+        clickableText.setSpan(clickableSpan, 0, text.length, 0)
+        textView.movementMethod = LinkMovementMethod.getInstance()
+        textView.text = clickableText
+    }
+
+    // функция открытия вебсайта в браузере
+    private fun openWebsite(url: String) {
+        startActivity(Intent(Intent.ACTION_VIEW).apply { data = Uri.parse(url) })
     }
 
     companion object {

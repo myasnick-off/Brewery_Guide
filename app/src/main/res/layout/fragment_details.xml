@@ -20,11 +20,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/nameTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_8"
-                android:textSize="@dimen/text_18"
-                android:textStyle="bold"
+                style="@style/titleTextStyle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -32,273 +28,200 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/typeHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
+                style="@style/headerTextStyle"
                 android:text="@string/type"
-                android:textSize="@dimen/text_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/typeTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
+                style="@style/commonTextStyle"
                 app:layout_constraintStart_toEndOf="@id/typeHeaderTextView"
                 app:layout_constraintTop_toBottomOf="@+id/nameTextView"
                 tools:text="@string/type" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/streetHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
+                style="@style/headerTextStyle"
                 android:text="@string/street"
-                android:textSize="@dimen/text_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/typeHeaderTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/streetTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
+                style="@style/commonTextStyle"
                 app:layout_constraintStart_toEndOf="@id/streetHeaderTextView"
                 app:layout_constraintTop_toBottomOf="@+id/typeTextView"
                 tools:text="@string/street" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/secondAddrHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
+                style="@style/headerTextStyle"
                 android:text="@string/address2"
-                android:textSize="@dimen/text_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/streetHeaderTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/secondAddrTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
+                style="@style/commonTextStyle"
                 app:layout_constraintStart_toEndOf="@id/secondAddrHeaderTextView"
                 app:layout_constraintTop_toBottomOf="@+id/streetTextView"
                 tools:text="@string/address2" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/thirdAddrHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
+                style="@style/headerTextStyle"
                 android:text="@string/address3"
-                android:textSize="@dimen/text_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/secondAddrHeaderTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/thirdAddrTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
+                style="@style/commonTextStyle"
                 app:layout_constraintStart_toEndOf="@id/thirdAddrHeaderTextView"
                 app:layout_constraintTop_toBottomOf="@+id/secondAddrTextView"
                 tools:text="@string/address3" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/cityHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
+                style="@style/headerTextStyle"
                 android:text="@string/city"
-                android:textSize="@dimen/text_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/thirdAddrHeaderTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/cityTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
+                style="@style/commonTextStyle"
                 app:layout_constraintStart_toEndOf="@id/cityHeaderTextView"
                 app:layout_constraintTop_toBottomOf="@+id/thirdAddrTextView"
                 tools:text="@string/city" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/stateHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
+                style="@style/headerTextStyle"
                 android:text="@string/state"
-                android:textSize="@dimen/text_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cityHeaderTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/stateTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
+                style="@style/commonTextStyle"
                 app:layout_constraintStart_toEndOf="@id/stateHeaderTextView"
                 app:layout_constraintTop_toBottomOf="@+id/cityTextView"
                 tools:text="@string/state" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/provinceHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
+                style="@style/headerTextStyle"
                 android:text="@string/province"
-                android:textSize="@dimen/text_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/stateHeaderTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/provinceTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
+                style="@style/commonTextStyle"
                 app:layout_constraintStart_toEndOf="@id/provinceHeaderTextView"
                 app:layout_constraintTop_toBottomOf="@+id/stateTextView"
                 tools:text="@string/province" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/postHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
+                style="@style/headerTextStyle"
                 android:text="@string/post"
-                android:textSize="@dimen/text_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/provinceHeaderTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/postTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
+                style="@style/commonTextStyle"
                 app:layout_constraintStart_toEndOf="@id/postHeaderTextView"
                 app:layout_constraintTop_toBottomOf="@+id/provinceTextView"
                 tools:text="@string/post" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/countryHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
+                style="@style/headerTextStyle"
                 android:text="@string/country"
-                android:textSize="@dimen/text_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/postHeaderTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/countryTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
+                style="@style/commonTextStyle"
                 app:layout_constraintStart_toEndOf="@id/countryHeaderTextView"
                 app:layout_constraintTop_toBottomOf="@+id/postTextView"
                 tools:text="@string/country" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/phoneHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
-                android:text="@string/phone"
-                android:textSize="@dimen/text_18"
+            <View
+                android:id="@+id/splitView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="@dimen/margin_16"
+                android:background="?colorSecondary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/countryHeaderTextView" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/phoneTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
-                app:layout_constraintStart_toEndOf="@id/phoneHeaderTextView"
-                app:layout_constraintTop_toBottomOf="@+id/countryTextView"
-                tools:text="@string/phone" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/phoneHeaderTextView"
+                style="@style/commonImageStyle"
+                android:src="@drawable/ic_baseline_phone_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/splitView1" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/phoneTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/phoneHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/splitView1"
+                tools:text="@string/phone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/siteHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
-                android:text="@string/site"
-                android:textSize="@dimen/text_18"
+                style="@style/commonImageStyle"
+                android:src="@drawable/ic_baseline_website_24"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phoneHeaderTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/siteTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
+                style="@style/commonTextStyle"
                 app:layout_constraintStart_toEndOf="@id/siteHeaderTextView"
                 app:layout_constraintTop_toBottomOf="@+id/phoneTextView"
                 tools:text="@string/site" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/createdHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
-                android:text="@string/created"
-                android:textSize="@dimen/text_18"
+            <View
+                android:id="@+id/splitView2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="@dimen/margin_16"
+                android:background="?colorSecondary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/siteHeaderTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/createdHeaderTextView"
+                style="@style/headerTextStyle"
+                android:text="@string/created"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/splitView2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/createdTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
+                style="@style/commonTextStyle"
                 app:layout_constraintStart_toEndOf="@id/createdHeaderTextView"
-                app:layout_constraintTop_toBottomOf="@+id/siteTextView"
+                app:layout_constraintTop_toBottomOf="@+id/splitView2"
                 tools:text="@string/created" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/updatedHeaderTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:alpha="@string/alpha_50"
+                style="@style/headerTextStyle"
                 android:text="@string/updated"
-                android:textSize="@dimen/text_18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/createdHeaderTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/updatedTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_4"
-                android:textSize="@dimen/text_18"
+                style="@style/commonTextStyle"
                 app:layout_constraintStart_toEndOf="@id/updatedHeaderTextView"
                 app:layout_constraintTop_toBottomOf="@+id/createdTextView"
                 tools:text="@string/updated" />

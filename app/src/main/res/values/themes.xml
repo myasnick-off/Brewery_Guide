@@ -13,4 +13,28 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="commonImageStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_8</item>
+        <item name="android:alpha">@string/alpha_50</item>
+    </style>
+    
+    <style name="commonTextStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_18</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_8</item>
+    </style>
+
+    <style name="headerTextStyle" parent="commonTextStyle">
+        <item name="android:alpha">@string/alpha_50</item>
+    </style>
+
+    <style name="titleTextStyle" parent="commonTextStyle">
+        <item name="android:layout_margin">@dimen/margin_16</item>
+        <item name="android:textColor">?colorOnPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

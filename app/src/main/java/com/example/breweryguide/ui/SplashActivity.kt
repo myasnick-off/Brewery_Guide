@@ -11,9 +11,7 @@ import com.example.breweryguide.databinding.ActivitySplashBinding
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
 
-    private val handler: Handler by lazy {
-        Handler(mainLooper)
-    }
+    private val handler: Handler by lazy { Handler(mainLooper) }
 
     private var _binding: ActivitySplashBinding? = null
     private val binding get() = _binding!!
@@ -22,7 +20,6 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         val animationUp = TranslateAnimation(
             Animation.ABSOLUTE, 0.0f, Animation.ABSOLUTE, 0.0f,
