@@ -3,9 +3,7 @@ package com.example.breweryguide.ui.list
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
-import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.breweryguide.databinding.FragmentListItemBinding
 import com.example.breweryguide.domain.model.BreweryBasic

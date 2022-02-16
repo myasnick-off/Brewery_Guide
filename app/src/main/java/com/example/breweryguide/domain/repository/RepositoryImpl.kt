@@ -8,11 +8,11 @@ import retrofit2.Call
 
 class RepositoryImpl(private val breweryApiService: BreweryApiService): Repository {
 
-    override fun getBreweryListFromServer(): Call<List<BreweryBasicDto>> {
-        return breweryApiService.getBreweryList()
+    override fun getBreweryListFromServer(page: Int): Single<List<BreweryBasicDto>> {
+        return breweryApiService.getBreweryList(page)
     }
 
-    override fun getBreweryFromServer(breweryId: String): Call<BreweryDetailsDto> {
+    override fun getBreweryFromServer(breweryId: String): Single<BreweryDetailsDto> {
         return breweryApiService.getBrewery(breweryId)
     }
 }

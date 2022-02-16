@@ -6,6 +6,6 @@ import io.reactivex.rxjava3.core.Single
 import retrofit2.Call
 
 interface Repository {
-    fun getBreweryListFromServer():Call<List<BreweryBasicDto>>
-    fun getBreweryFromServer(breweryId: String):Call<BreweryDetailsDto>
+    fun getBreweryListFromServer(page: Int):Single<List<BreweryBasicDto>>
+    fun getBreweryFromServer(breweryId: String):Single<BreweryDetailsDto>
 }

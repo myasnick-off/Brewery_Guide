@@ -13,11 +13,11 @@ interface BreweryApiService {
 
     @GET(BREWERY_LIST_END_POINT)
     fun getBreweryList(
-        @Query("page") page: Int = 1
-    ): Call<List<BreweryBasicDto>>
+        @Query("page") page: Int
+    ): Single<List<BreweryBasicDto>>
 
     @GET("$BREWERY_LIST_END_POINT/{breweryId}")
     fun getBrewery(
         @Path("breweryId") breweryId: String
-    ): Call<BreweryDetailsDto>
+    ): Single<BreweryDetailsDto>
 }
