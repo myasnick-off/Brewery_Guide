@@ -24,7 +24,6 @@ object ApiHolder {
         Retrofit.Builder()
             .baseUrl(OPEN_BREWERY_API_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build()
     }
 

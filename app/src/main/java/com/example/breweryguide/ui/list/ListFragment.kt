@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.paging.PagedList
 import com.example.breweryguide.R
 import com.example.breweryguide.databinding.FragmentListBinding
 import com.example.breweryguide.domain.model.BreweryBasic
@@ -22,6 +23,12 @@ class ListFragment: Fragment() {
     private val viewModel by lazy {
         ViewModelProvider(this).get(ListViewModel::class.java)
     }
+
+    private val breweriesViewModel by lazy {
+        ViewModelProvider(this).get(BreweriesViewModel::class.java)
+    }
+
+
     private val adapter by lazy {
         ListRecyclerAdapter( object : ItemClickListener {
             override fun onItemClicked(breweryId: String) { runDetails(breweryId) }
@@ -43,7 +50,7 @@ class ListFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
-        requestData()
+//        requestData()
     }
 
     override fun onDestroy() {
@@ -53,7 +60,15 @@ class ListFragment: Fragment() {
 
     private fun init() {
         binding.listRecyclerView.adapter = adapter
-        val observer = Observer<AppState>() { renderData(it) }
+
+
+
+        breweriesViewModel.getData().observe(viewLifecycleOwner,
+            {
+                adapter.submitList(it) })
+
+        val observer = Observer<AppState>() {
+            renderData(it) }
         viewModel.getLiveData().observe(viewLifecycleOwner, observer)
     }
 
@@ -78,7 +93,7 @@ class ListFragment: Fragment() {
     }
 
     private fun showList(breweryList: List<BreweryBasic>) {
-        adapter.submitList(breweryList)
+//        adapter.submitList(breweryList)
     }
 
     private fun runDetails(breweryId: String) {
