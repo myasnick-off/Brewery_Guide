@@ -14,7 +14,7 @@ data class BreweryDetailsDto(
     val city: String?,
     val state: String?,
     val countyProvince: String?,
-    val postal_code: String?,
+    val postalCode: String?,
     val country: String?,
     val longitude: String?,
     val latitude: String?,

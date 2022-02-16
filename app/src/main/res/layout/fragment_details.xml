@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorSurface"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="@dimen/padding_4">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nameTextView"
+                style="@style/titleTextStyle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/brewery_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/typeHeaderTextView"
+                style="@style/headerTextStyle"
+                android:text="@string/type"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/typeTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/typeHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+                tools:text="@string/type" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/streetHeaderTextView"
+                style="@style/headerTextStyle"
+                android:text="@string/street"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/typeHeaderTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/streetTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/streetHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/typeTextView"
+                tools:text="@string/street" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/secondAddrHeaderTextView"
+                style="@style/headerTextStyle"
+                android:text="@string/address2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/streetHeaderTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/secondAddrTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/secondAddrHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/streetTextView"
+                tools:text="@string/address2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/thirdAddrHeaderTextView"
+                style="@style/headerTextStyle"
+                android:text="@string/address3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secondAddrHeaderTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/thirdAddrTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/thirdAddrHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/secondAddrTextView"
+                tools:text="@string/address3" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cityHeaderTextView"
+                style="@style/headerTextStyle"
+                android:text="@string/city"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thirdAddrHeaderTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cityTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/cityHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/thirdAddrTextView"
+                tools:text="@string/city" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/stateHeaderTextView"
+                style="@style/headerTextStyle"
+                android:text="@string/state"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cityHeaderTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/stateTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/stateHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/cityTextView"
+                tools:text="@string/state" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/provinceHeaderTextView"
+                style="@style/headerTextStyle"
+                android:text="@string/province"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stateHeaderTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/provinceTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/provinceHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/stateTextView"
+                tools:text="@string/province" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/postHeaderTextView"
+                style="@style/headerTextStyle"
+                android:text="@string/post"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/provinceHeaderTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/postTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/postHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/provinceTextView"
+                tools:text="@string/post" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/countryHeaderTextView"
+                style="@style/headerTextStyle"
+                android:text="@string/country"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postHeaderTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/countryTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/countryHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/postTextView"
+                tools:text="@string/country" />
+
+            <View
+                android:id="@+id/splitView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="@dimen/margin_16"
+                android:background="?colorSecondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/countryHeaderTextView" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/phoneHeaderTextView"
+                style="@style/commonImageStyle"
+                android:src="@drawable/ic_baseline_phone_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/splitView1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/phoneTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/phoneHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/splitView1"
+                tools:text="@string/phone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/siteHeaderTextView"
+                style="@style/commonImageStyle"
+                android:src="@drawable/ic_baseline_website_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phoneHeaderTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/siteTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/siteHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/phoneTextView"
+                tools:text="@string/site" />
+
+            <View
+                android:id="@+id/splitView2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="@dimen/margin_16"
+                android:background="?colorSecondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/siteHeaderTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/createdHeaderTextView"
+                style="@style/headerTextStyle"
+                android:text="@string/created"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/splitView2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/createdTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/createdHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/splitView2"
+                tools:text="@string/created" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/updatedHeaderTextView"
+                style="@style/headerTextStyle"
+                android:text="@string/updated"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createdHeaderTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/updatedTextView"
+                style="@style/commonTextStyle"
+                app:layout_constraintStart_toEndOf="@id/updatedHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@+id/createdTextView"
+                tools:text="@string/updated" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/detailsProgressBar"
+        layout="@layout/item_progress_bar" />
+
+</FrameLayout>

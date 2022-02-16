@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorSecondary">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cupImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_beer_bottle" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/foamGuideLineH"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/foamGuideLineV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.59" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/foamImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/foamGuideLineH"
+        app:layout_constraintEnd_toStartOf="@+id/foamGuideLineV"
+        app:srcCompat="@drawable/ic_baseline_wb_cloudy_100" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/subFoamGuideLineH"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/subFoamGuideLineV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/subFoamImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:rotation="270"
+        app:layout_constraintBottom_toTopOf="@+id/subFoamGuideLineH"
+        app:layout_constraintEnd_toStartOf="@+id/subFoamGuideLineV"
+        app:srcCompat="@drawable/ic_baseline_wb_cloudy_100" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
