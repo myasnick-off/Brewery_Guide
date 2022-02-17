@@ -11,11 +11,15 @@ import retrofit2.http.Query
 
 interface BreweryApiService {
 
+    // запрос на получение списка пивоварен
+    // в качестве параметра запроса номер страницы со списком
     @GET(BREWERY_LIST_END_POINT)
     fun getBreweryList(
         @Query("page") page: Int
     ): Single<List<BreweryBasicDto>>
 
+    // запрос на получение информации о пивоварне
+    // в качестве параметра запроса ID пивоварни
     @GET("$BREWERY_LIST_END_POINT/{breweryId}")
     fun getBrewery(
         @Path("breweryId") breweryId: String

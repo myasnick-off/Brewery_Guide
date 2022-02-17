@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.breweryguide.databinding.FragmentListItemBinding
 import com.example.breweryguide.domain.model.BreweryBasic
 
-class ListRecyclerAdapter(private val listener: ListFragment.ItemClickListener) :
+// адаптер для отображения списка пивоварен при постраничной подгрузке данных в процессе скролинга
+class ListRecyclerAdapter(private val listener: BreweryListFragment.ItemClickListener) :
     PagedListAdapter<BreweryBasic, ListRecyclerAdapter.BreweryViewHolder>(BreweryItemCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BreweryViewHolder {

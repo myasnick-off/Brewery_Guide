@@ -8,9 +8,11 @@ import android.view.animation.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.breweryguide.databinding.ActivitySplashBinding
 
+// Активити заставки приложения
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
 
+    // лениво создаем поток для отложенного старта основного активити приложения
     private val handler: Handler by lazy { Handler(mainLooper) }
 
     private var _binding: ActivitySplashBinding? = null
@@ -21,6 +23,7 @@ class SplashActivity : AppCompatActivity() {
         _binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // переменные и методы для создания анимации на экране заставки
         val animationUp = TranslateAnimation(
             Animation.ABSOLUTE, 0.0f, Animation.ABSOLUTE, 0.0f,
             Animation.ABSOLUTE, 0.0f, Animation.ABSOLUTE, -200.0f
@@ -43,6 +46,7 @@ class SplashActivity : AppCompatActivity() {
         binding.foamImageView.startAnimation(animationSet)
         binding.subFoamImageView.startAnimation(animationSet)
 
+        // запускаем поток для отложенного старта основного активити приложения
         handler.postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()

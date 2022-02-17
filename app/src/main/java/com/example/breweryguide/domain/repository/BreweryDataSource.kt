@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
 import com.example.breweryguide.domain.model.BreweryBasic
-import com.example.breweryguide.network.BreweryApiService
 import com.example.breweryguide.ui.AppState
 import com.example.breweryguide.utils.FIRST_PAGE
 import com.example.breweryguide.utils.dtoToModelBasicConvertor
@@ -16,6 +15,7 @@ class BreweryDataSource(
     )
     : PageKeyedDataSource<Int, BreweryBasic>() {
 
+    // LiveData для отслеживания состояний загрузки данных
     val appStateLiveData: MutableLiveData<AppState> = MutableLiveData()
 
     override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, BreweryBasic>) {
@@ -26,7 +26,6 @@ class BreweryDataSource(
                     val breweryList = it.map {item -> dtoToModelBasicConvertor(item) }
                     callback.onResult(breweryList, null, FIRST_PAGE + 1)
                     appStateLiveData.postValue(AppState.ListSuccess)
-                    Log.d("mylog", "init page ${params.requestedLoadSize}")
                 },
                 {
                     Log.e("mylog", "${it.message}")
@@ -42,7 +41,6 @@ class BreweryDataSource(
                 {
                     val breweryList = it.map {item -> dtoToModelBasicConvertor(item) }
                     callback.onResult(breweryList, params.key + 1)
-                    Log.d("mylog", "next page ${params.key}")
                     appStateLiveData.postValue(AppState.ListSuccess)
                 },
                 {

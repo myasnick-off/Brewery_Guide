@@ -18,7 +18,7 @@ class BreweriesViewModel : ViewModel() {
     private val breweryDataSourceFactory = BreweryDataSourceFactory(compositeDisposable)
 
     private val  breweryListLiveData : LiveData<PagedList<BreweryBasic>> by lazy {
-        breweryListBuilder()
+        createBreweryListLiveData()
     }
     private val  appStateLiveData : LiveData<AppState> by lazy {
         Transformations
@@ -29,7 +29,7 @@ class BreweriesViewModel : ViewModel() {
 
     fun getAppStateData() = appStateLiveData
 
-    private fun breweryListBuilder(): LiveData<PagedList<BreweryBasic>> {
+    private fun createBreweryListLiveData(): LiveData<PagedList<BreweryBasic>> {
         val config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)
             .setPageSize(PAGE_SIZE)

@@ -64,6 +64,7 @@ class DetailsFragment : Fragment() {
         breweryId?.let { viewModel.getBreweryDetails(it) }
     }
 
+    // функция обработки состояний приложения
     private fun renderData(appState: AppState) = with(binding) {
         when(appState) {
             AppState.Loading -> {

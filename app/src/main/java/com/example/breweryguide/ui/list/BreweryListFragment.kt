@@ -15,7 +15,7 @@ import com.example.breweryguide.utils.hide
 import com.example.breweryguide.utils.show
 import com.example.breweryguide.utils.showErrorDialog
 
-class ListFragment: Fragment() {
+class BreweryListFragment: Fragment() {
 
     private val viewModel by lazy {
         ViewModelProvider(this).get(BreweriesViewModel::class.java)
@@ -53,8 +53,10 @@ class ListFragment: Fragment() {
         binding.listRecyclerView.adapter = adapter
         viewModel.getPagedListData().observe(viewLifecycleOwner, { adapter.submitList(it) })
         viewModel.getAppStateData().observe(viewLifecycleOwner, { renderAppState(it) })
+
     }
 
+    // обработка состояний от AppStateLiveData
     private fun renderAppState(appState: AppState) = with(binding) {
         when(appState) {
             AppState.Loading -> listProgressBar.root.show()
@@ -68,6 +70,7 @@ class ListFragment: Fragment() {
         }
     }
 
+    // функция запуска экрана с детальной информацией о выбранной пивоварне
     private fun runDetails(breweryId: String) {
         parentFragmentManager.beginTransaction()
             .setCustomAnimations(
@@ -81,6 +84,7 @@ class ListFragment: Fragment() {
             .commit()
     }
 
+    // функция перезапуска экрана со списком пивоварен
     private fun restartList() {
         parentFragmentManager.beginTransaction()
             .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
@@ -94,6 +98,6 @@ class ListFragment: Fragment() {
     }
 
     companion object {
-        fun newInstance() = ListFragment()
+        fun newInstance() = BreweryListFragment()
     }
 }
