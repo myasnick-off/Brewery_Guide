@@ -3,7 +3,7 @@
     <string name="brewery_name">Brewery Name</string>
     <string name="type">Type:</string>
     <string name="country">Country:</string>
-    <string name="alpha_50">0.5</string>
+    <string name="alpha_50" translatable="false">0.5</string>
     <string name="loading_error">Loading error!</string>
     <string name="retry">Try again!</string>
     <string name="cancel">Cancel</string>

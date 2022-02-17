@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="progressBarStyle">@style/myProgressBar</item>
     </style>
 
     <style name="commonImageStyle">
@@ -36,5 +37,9 @@
         <item name="android:layout_margin">@dimen/margin_16</item>
         <item name="android:textColor">?colorOnPrimary</item>
         <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="myProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:colorAccent">?colorPrimaryVariant</item>
     </style>
 </resources>

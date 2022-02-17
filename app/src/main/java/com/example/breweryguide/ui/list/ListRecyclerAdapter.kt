@@ -2,14 +2,15 @@ package com.example.breweryguide.ui.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.breweryguide.databinding.FragmentListItemBinding
 import com.example.breweryguide.domain.model.BreweryBasic
 
-class ListRecyclerAdapter(private val listener: ListFragment.ItemClickListener) :
-    ListAdapter<BreweryBasic, ListRecyclerAdapter.BreweryViewHolder>(BreweryItemCallback) {
+// адаптер для отображения списка пивоварен при постраничной подгрузке данных в процессе скролинга
+class ListRecyclerAdapter(private val listener: BreweryListFragment.ItemClickListener) :
+    PagedListAdapter<BreweryBasic, ListRecyclerAdapter.BreweryViewHolder>(BreweryItemCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BreweryViewHolder {
         val binding =
@@ -18,7 +19,7 @@ class ListRecyclerAdapter(private val listener: ListFragment.ItemClickListener) 
     }
 
     override fun onBindViewHolder(holder: BreweryViewHolder, position: Int) {
-        holder.bind(currentList[position])
+        getItem(position)?.let { holder.bind(it) }
     }
 
     inner class BreweryViewHolder(private val binding: FragmentListItemBinding) :
@@ -30,7 +31,6 @@ class ListRecyclerAdapter(private val listener: ListFragment.ItemClickListener) 
             countryTextView.text = breweryBasic.country
             root.setOnClickListener { listener.onItemClicked(breweryBasic.id) }
         }
-
     }
 }
 

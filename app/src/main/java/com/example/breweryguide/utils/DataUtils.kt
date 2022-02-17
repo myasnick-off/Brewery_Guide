@@ -5,6 +5,7 @@ import com.example.breweryguide.domain.model.BreweryDetails
 import com.example.breweryguide.network.dto.BreweryBasicDto
 import com.example.breweryguide.network.dto.BreweryDetailsDto
 
+// конвертер данных, полученных с сервера, в локальную модель для списка пивоварен
 fun dtoToModelBasicConvertor(breweryBasicDto: BreweryBasicDto): BreweryBasic {
     return BreweryBasic(
         id = breweryBasicDto.id,
@@ -14,6 +15,7 @@ fun dtoToModelBasicConvertor(breweryBasicDto: BreweryBasicDto): BreweryBasic {
     )
 }
 
+// конвертер данных, полученных с сервера, в локальную модель для информации о пивоварне
 fun dtoToModelDetailsConvertor(breweryDetailsDto: BreweryDetailsDto): BreweryDetails {
     return BreweryDetails(
         id = breweryDetailsDto.id,

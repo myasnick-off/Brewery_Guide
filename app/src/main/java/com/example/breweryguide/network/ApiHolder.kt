@@ -23,8 +23,8 @@ object ApiHolder {
     private val retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(OPEN_BREWERY_API_URL)
-            .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
 
