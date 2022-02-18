@@ -15,12 +15,15 @@ class SplashActivity : AppCompatActivity() {
     // лениво создаем поток для отложенного старта основного активити приложения
     private val handler: Handler by lazy { Handler(mainLooper) }
 
-    private var _binding: ActivitySplashBinding? = null
-    private val binding get() = _binding!!
+//    private var _binding: ActivitySplashBinding? = null
+//    private val binding get() = _binding!!
+
+    private val binding by lazy {
+        ActivitySplashBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // переменные и методы для создания анимации на экране заставки
@@ -42,9 +45,11 @@ class SplashActivity : AppCompatActivity() {
             addAnimation(animationUp)
             addAnimation(animationDown)
         }
-        binding.cupImageView.startAnimation(animationSet)
-        binding.foamImageView.startAnimation(animationSet)
-        binding.subFoamImageView.startAnimation(animationSet)
+        with(binding) {
+            cupImageView.startAnimation(animationSet)
+            foamImageView.startAnimation(animationSet)
+            subFoamImageView.startAnimation(animationSet)
+        }
 
         // запускаем поток для отложенного старта основного активити приложения
         handler.postDelayed({

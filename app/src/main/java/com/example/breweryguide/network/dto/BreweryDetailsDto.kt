@@ -1,9 +1,6 @@
 package com.example.breweryguide.network.dto
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
 data class BreweryDetailsDto(
     val id: String,
     val name: String,
@@ -22,4 +19,4 @@ data class BreweryDetailsDto(
     val websiteUrl: String?,
     val updatedAt: String?,
     val createdAt: String?
-) : Parcelable
+)

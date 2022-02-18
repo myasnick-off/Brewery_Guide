@@ -50,8 +50,8 @@ class DetailsFragment : Fragment() {
         requestData()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 
