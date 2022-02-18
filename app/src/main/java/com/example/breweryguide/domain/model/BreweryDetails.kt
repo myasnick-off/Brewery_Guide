@@ -1,9 +1,6 @@
 package com.example.breweryguide.domain.model
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
 data class BreweryDetails(
     val id: String,
     val name: String,
@@ -22,4 +19,4 @@ data class BreweryDetails(
     val websiteUrl: String,
     val updatedAt: String,
     val createdAt: String
-) : Parcelable
+)
